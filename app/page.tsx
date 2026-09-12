@@ -29,7 +29,7 @@ export default function Page() {
         <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-white/20 bg-white/[0.09] shadow-[0_18px_55px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-2xl backdrop-saturate-150">
           <div className="flex items-center justify-between px-4 py-3 sm:px-5 sm:py-3.5 lg:px-6">
             <a href="#top" className="flex items-center gap-3" aria-label="Cosmox Technologies home">
-              <span className="flex size-10 items-center justify-center rounded-xl border border-white/20 bg-ink/40 p-1.5 shadow-inner shadow-white/10 sm:size-11">
+              <span className="flex size-12 items-center justify-center rounded-xl border border-white/20 bg-ink/40 p-1.5 shadow-inner shadow-white/10 sm:size-13">
                 <img src="/cosmox-nav-logo.svg" alt="Cosmox Technologies" className="size-full object-contain" />
               </span>
               <span className="hidden text-sm font-bold tracking-[0.24em] text-white sm:block">COSMOX <span className="text-lime">TECHNOLOGIES</span></span>
