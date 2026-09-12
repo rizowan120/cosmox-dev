@@ -25,21 +25,25 @@ export default function Page() {
 
   return (
     <main className="min-h-screen overflow-hidden bg-background text-foreground">
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-ink/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
-          <a href="#top" className="flex items-center gap-3" aria-label="Cosmox Technologies home">
-            <img src="/cosmox-icon.svg" alt="" className="size-10 rounded-xl" />
-            <span className="hidden text-sm font-bold tracking-[0.24em] text-white sm:block">COSMOX <span className="text-lime">TECHNOLOGIES</span></span>
-          </a>
-          <div className="hidden items-center gap-8 text-sm text-white/65 md:flex">
-            <a className="transition hover:text-lime" href="#services">Services</a>
-            <a className="transition hover:text-lime" href="#process">How we work</a>
-            <a className="transition hover:text-lime" href="#contact">Contact</a>
-            <a href="#contact" className="rounded-full bg-lime px-5 py-2.5 font-semibold text-ink transition hover:bg-lime-soft">Start a project <ArrowUpRight className="ml-1 inline size-4" /></a>
+      <nav className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-5">
+        <div className="mx-auto max-w-7xl overflow-hidden rounded-2xl border border-white/20 bg-white/[0.09] shadow-[0_18px_55px_rgba(0,0,0,0.32),inset_0_1px_0_rgba(255,255,255,0.2)] backdrop-blur-2xl backdrop-saturate-150">
+          <div className="flex items-center justify-between px-4 py-3 sm:px-5 sm:py-3.5 lg:px-6">
+            <a href="#top" className="flex items-center gap-3" aria-label="Cosmox Technologies home">
+              <span className="flex size-10 items-center justify-center rounded-xl border border-white/20 bg-ink/40 p-1.5 shadow-inner shadow-white/10 sm:size-11">
+                <img src="/cosmox-nav-logo.svg" alt="Cosmox Technologies" className="size-full object-contain" />
+              </span>
+              <span className="hidden text-sm font-bold tracking-[0.24em] text-white sm:block">COSMOX <span className="text-lime">TECHNOLOGIES</span></span>
+            </a>
+            <div className="hidden items-center gap-8 text-sm text-white/70 md:flex">
+              <a className="transition hover:text-lime" href="#services">Services</a>
+              <a className="transition hover:text-lime" href="#process">How we work</a>
+              <a className="transition hover:text-lime" href="#contact">Contact</a>
+              <a href="#contact" className="rounded-full border border-lime/30 bg-lime px-5 py-2.5 font-semibold text-ink shadow-[0_0_24px_rgba(216,255,63,0.18)] transition hover:bg-lime-soft">Start a project <ArrowUpRight className="ml-1 inline size-4" /></a>
+            </div>
+            <button className="rounded-lg border border-white/15 bg-white/10 p-2 text-white backdrop-blur-md md:hidden" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
           </div>
-          <button className="text-white md:hidden" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
+          {menuOpen && <div className="flex flex-col gap-5 border-t border-white/15 bg-ink/25 px-5 py-5 text-white/80 backdrop-blur-xl md:hidden"><a href="#services" onClick={() => setMenuOpen(false)}>Services</a><a href="#process" onClick={() => setMenuOpen(false)}>How we work</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></div>}
         </div>
-        {menuOpen && <div className="flex flex-col gap-5 border-t border-white/10 px-6 py-6 text-white/75 md:hidden"><a href="#services" onClick={() => setMenuOpen(false)}>Services</a><a href="#process" onClick={() => setMenuOpen(false)}>How we work</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></div>}
       </nav>
 
       <section id="top" className="relative flex min-h-[88vh] items-end bg-ink px-6 pb-20 pt-36 lg:min-h-[760px] lg:px-10 lg:pb-28">
