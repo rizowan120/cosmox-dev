@@ -40,9 +40,9 @@ export default function Page() {
               <a className="transition hover:text-lime" href="#contact">Contact</a>
               <a href="#contact" className="rounded-full border border-lime/30 bg-lime px-5 py-2.5 font-semibold text-ink shadow-[0_0_24px_rgba(216,255,63,0.18)] transition hover:bg-lime-soft">Start a project <ArrowUpRight className="ml-1 inline size-4" /></a>
             </div>
-            <button className="rounded-lg border border-white/15 bg-white/10 p-2 text-white backdrop-blur-md md:hidden" aria-label={menuOpen ? 'Close menu' : 'Open menu'} onClick={() => setMenuOpen(!menuOpen)}>{menuOpen ? <X /> : <Menu />}</button>
+            <button className={`menu-toggle rounded-lg border border-white/15 bg-white/10 p-2 text-white backdrop-blur-md md:hidden ${menuOpen ? 'is-open' : ''}`} aria-label={menuOpen ? 'Close menu' : 'Open menu'} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}><span className="sr-only">{menuOpen ? 'Close menu' : 'Open menu'}</span><span className="menu-icon" aria-hidden="true"><span /><span /><span /></span></button>
           </div>
-          {menuOpen && <div className="flex flex-col gap-5 border-t border-white/15 bg-ink/25 px-5 py-5 text-white/80 backdrop-blur-xl md:hidden"><a href="#services" onClick={() => setMenuOpen(false)}>Services</a><a href="#process" onClick={() => setMenuOpen(false)}>How we work</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></div>}
+          <div className={`mobile-menu flex flex-col gap-5 border-t border-white/15 bg-ink/25 px-5 py-5 text-white/80 backdrop-blur-xl md:hidden ${menuOpen ? 'is-open' : ''}`}><a href="#services" onClick={() => setMenuOpen(false)}>Services</a><a href="#process" onClick={() => setMenuOpen(false)}>How we work</a><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></div>
         </div>
       </nav>
 
